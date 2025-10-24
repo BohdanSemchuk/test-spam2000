@@ -70,10 +70,7 @@
   "links": [],
   "panels": [
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
-      },
+      "datasource": null,
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -127,10 +124,7 @@
       "pluginVersion": "12.2.0",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
-          },
+          "datasource": null,
           "editorMode": "code",
           "expr": "count(random_gauge_2)",
           "legendFormat": "__auto",
@@ -142,10 +136,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
-      },
+      "datasource": null,
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -226,20 +217,14 @@
           "legendFormat": "__auto",
           "range": true,
           "refId": "A",
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
-          }
+          "datasource": null
         }
       ],
       "title": "Bar chart by country",
       "type": "barchart"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
-      },
+      "datasource": null,
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -304,16 +289,10 @@
           "legendFormat": "__auto",
           "range": true,
           "refId": "A",
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
-          }
+          "datasource": null
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
-          },
+          "datasource": null,
           "expr": "",
           "hide": false,
           "instant": false,
@@ -325,10 +304,7 @@
       "type": "histogram"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "${DS_VICTORIAMETRICS}"
-      },
+      "datasource": null,
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -393,10 +369,7 @@
           "legendFormat": "__auto",
           "range": true,
           "refId": "A",
-          "datasource": {
-            "type": "prometheus",
-            "uid": "${DS_VICTORIAMETRICS}"
-          }
+          "datasource": null
         }
       ],
       "title": "Heatmap by country",

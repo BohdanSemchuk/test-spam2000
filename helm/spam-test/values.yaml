@@ -128,6 +128,10 @@ monitoring:
   metricsPath: /metrics
   scrapeInterval: 30s
 
+grafana:
+  dashboards:
+    enabled: true
+
 victoria-metrics-k8s-stack:
   vmsingle:
     enabled: true
@@ -163,5 +167,5 @@ victoria-metrics-k8s-stack:
             options:
               path: /var/lib/grafana/dashboards/default
     dashboardsConfigMaps:
-      default: spam-test-dashboards
+      default: spam3000-spam-3000-dashboards
     
