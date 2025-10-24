@@ -168,4 +168,10 @@ victoria-metrics-k8s-stack:
               path: /var/lib/grafana/dashboards/default
     dashboardsConfigMaps:
       default: spam3000-spam-3000-dashboards
+    sidecar:
+      datasources:
+        default:
+          - name: VictoriaMetrics
+            isDefault: true
+            uid: anyvalue
     
