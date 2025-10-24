@@ -19,14 +19,19 @@ jobs:
       with:
         version: '3.14.0'
 
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v4
+      with:
+        version: 'v1.28.0'
+
     - name: Lint Helm chart
       run: |
-        helm lint . -f values.yaml
+        helm lint helm/spam-test/. -f helm/spam-test/values.yaml
         
     - name: Template Helm chart
       run: |
-        helm template spam3000 . -f values.yaml --debug
+        helm template spam3000 helm/spam-test/. -f helm/spam-test/values.yaml --debug
 
     - name: Validate Kubernetes manifests
       run: |
-        helm template spam3000 . -f values.yaml | kubectl apply --dry-run=client -f -
+        helm template spam3000 helm/spam-test/. -f helm/spam-test/values.yaml | kubectl apply --dry-run=client -f -
