@@ -154,13 +154,6 @@ victoria-metrics-k8s-stack:
     ingress:
       enabled: false
     
-    dashboards:
-      default:
-        kubernetes-cluster:
-          gnetId: 7249
-          revision: 1
-          datasource: VictoriaMetrics
-    
     dashboardProviders:
       dashboardproviders.yaml:
         apiVersion: 1
@@ -173,8 +166,10 @@ victoria-metrics-k8s-stack:
             editable: true
             options:
               path: /var/lib/grafana/dashboards/default
+
     dashboardsConfigMaps:
       default: spam3000-spam-3000-dashboards
+
     sidecar:
       datasources:
         default:
