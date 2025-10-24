@@ -154,6 +154,13 @@ victoria-metrics-k8s-stack:
     ingress:
       enabled: false
     
+    dashboards:
+      default:
+        kubernetes-cluster:
+          gnetId: 7249
+          revision: 1
+          datasource: VictoriaMetrics
+    
     dashboardProviders:
       dashboardproviders.yaml:
         apiVersion: 1
