@@ -1,0 +1,16 @@
+{{- if .Values.monitoring.enabled }}
+apiVersion: operator.victoriametrics.com/v1beta1
+kind: VMServiceScrape
+metadata:
+  name: {{ include "spam-test.fullname" . }}
+  labels:
+    {{- include "spam-test.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "spam-test.selectorLabels" . | nindent 6 }}
+  endpoints:
+  - port: http
+    path: {{ .Values.monitoring.metricsPath }}
+    interval: {{ .Values.monitoring.scrapeInterval }}
+{{- end }}

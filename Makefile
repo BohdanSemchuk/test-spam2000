@@ -1,7 +1,13 @@
 install:
-  brew install minikube
+	which minikube > /dev/null || brew install minikube
 
 deploy:
-  minikube start
+	minikube start --driver=docker
 
-all: install deploy
+install-helm:
+	helm upgrade --install spam3000 helm/spam-test
+
+uninstall-helm:
+	helm uninstall spam3000
+
+all: install deploy install-helm
