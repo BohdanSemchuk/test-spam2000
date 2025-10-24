@@ -37,4 +37,4 @@ jobs:
 
     - name: Validate Kubernetes manifests
       run: |
-        helm template spam3000 helm/spam-test/. -f helm/spam-test/values.yaml | kubectl apply --dry-run=client -f -
+        make install-helm
