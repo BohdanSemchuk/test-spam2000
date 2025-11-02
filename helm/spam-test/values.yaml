@@ -150,7 +150,8 @@ victoria-metrics-k8s-stack:
   
   grafana:
     enabled: true
-    adminPassword: "mySecretPassword"
+    admin:
+      existingSecret: ""
     ingress:
       enabled: false
     
