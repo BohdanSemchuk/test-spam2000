@@ -1,13 +1,27 @@
-install:
+install-minikube:
 	which minikube > /dev/null || brew install minikube
 
-deploy:
+uninstall-minikube:
+	brew uninstall minikube 
+
+stop-minikube:
+	minikube stop
+
+start-minikube:
 	minikube start --driver=docker
 
-install-helm:
+install-argocd:
+	kubectl create namespace argocd
+	kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+install-spam:
 	helm upgrade --install spam3000 helm/spam-test
 
-uninstall-helm:
+uninstall-spam:
 	helm uninstall spam3000
 
-all: install deploy install-helm
+clean: uninstall-spam 
+
+clean-full: clean stop-minikube uninstall-minikube
+
+all: install-minikube start-minikube install-argocd install-spam

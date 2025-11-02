@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spam-3000
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/BohdanSemchuk/test-spam2000.git
+    targetRevision: HEAD
+    path: helm/spam-test
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: spam
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
