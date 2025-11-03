@@ -11,10 +11,11 @@ start-minikube:
 	minikube start --driver=docker
 
 install-argocd:
-	kubectl create namespace argocd
+	kubectl create namespace argocd || true
 	kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 install-spam:
+	cd helm/spam-test/ && helm dependency build
 	helm upgrade --install spam3000 helm/spam-test
 
 uninstall-spam:

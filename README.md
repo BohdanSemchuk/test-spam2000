@@ -2,7 +2,8 @@
 
 ## spam3000 Implementation
 
-The spam3000 implementation is an enhanced version of spam2000, with monitoring and dashboards
+The spam3000 implementation is an enhanced version of spam2000, with monitoring and dashboards.
+Monitoring was enabled by using victoria-metrics-k8s-stack as a dependency chart.
 
 ### About
 To get started, run the following command to install Minikube for macOS using Homebrew:

@@ -128,10 +128,16 @@ monitoring:
   metricsPath: /metrics
   scrapeInterval: 30s
 
+# Grafana dashboard configuration, enable or disable dashboard creation 
+# if enabled is true, the dashboard defined in dashboardsConfigMaps will be created
 grafana:
   dashboards:
     enabled: true
 
+# ----------------------------------------------------------------------
+# VICTORIA METRICS STACK CONFIGURATION
+# ----------------------------------------------------------------------
+# Victoria Metrics Stack configuration for helm chart victoria-metrics-k8s-stack
 victoria-metrics-k8s-stack:
   vmsingle:
     enabled: true
