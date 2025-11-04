@@ -1,8 +1,8 @@
 install-minikube:
 	which minikube > /dev/null || brew install minikube
 
-uninstall-minikube:
-	brew uninstall minikube 
+delete-minikube:
+	minikube delete || true 
 
 stop-minikube:
 	minikube stop
@@ -16,13 +16,13 @@ install-argocd:
 
 install-spam:
 	cd helm/spam-test/ && helm dependency build
-	helm upgrade --install spam3000 helm/spam-test
+	helm upgrade --install --atomic spam3000 helm/spam-test --timeout 10m
 
 uninstall-spam:
-	helm uninstall spam3000
+	helm uninstall spam3000 || true
 
 clean: uninstall-spam 
 
-clean-full: clean stop-minikube uninstall-minikube
+clean-full: clean stop-minikube delete-minikube
 
 all: install-minikube start-minikube install-argocd install-spam
